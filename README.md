@@ -1,5 +1,6 @@
 # Projeto_Terca
- Projeto da faculdade para uma ONG
+ Projeto da faculdade onde fazemos um site para uma ONG.
+ 
 Site: 
 
 Sobre nós e depoimentos / back-end e afundo:
