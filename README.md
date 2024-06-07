@@ -7,7 +7,6 @@ Kelwin Williams Ferreira da Silva e
 Vitor Hideki Lacerda Shinoda 
 
 
-
 Parte de equipe e parcerias / back-end e afundo:
 Natália do Nascimento e
 Heloísa dos santos nascimento 
