@@ -1,7 +1,7 @@
 # Projeto_Terca
  Projeto da faculdade onde fazemos um site para uma ONG.
  
-Site: 
+Site: https://ame-o-santo-amaro.vercel.app/
 
 Sobre nós e depoimentos / back-end e afundo:
 Kelwin Williams Ferreira da Silva e
