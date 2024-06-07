@@ -13,12 +13,12 @@ Natália do Nascimento e
 Heloísa dos santos nascimento 
 
 
-Parte de home / Front-End
+Parte de home / Front-End:
 Jair Aparecido Santana neto e
 Jonathan Justimiano Pereira 
 
 
-Parte de projetos e de onde somos / Back-end, Front-end 
+Parte de projetos e de onde somos / Back-end, Front-end:
 Rafael Gomes da Silva e
 Diego Teodoro de Jesus Santos 
 
