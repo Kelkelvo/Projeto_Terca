@@ -39,7 +39,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 1rem 4.5rem;
-  border-bottom: 1px solid #084D6E;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 .nav-list {
@@ -64,53 +64,6 @@ body {
   font-weight: 400;
 }
 
-/* .mobile-menu-icon { */
-  /* display: none; */
-  /* position: absolute; */
-  /* top: 50%; */
-  /* right: 2rem; */
-  /* transform: translateY(-50%); */
-/* } */
-
-/* .mobile-menu {
-  display: none;
-  position: fixed;
-  top: 50px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fbfdfd;
-  z-index: 999;
-  padding-top: 5em;
-}
-
-.mobile-menu a:hover{
-  color: #FFF;
-}
-
-.mobile-menu ul {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.mobile-menu .nav-item {
-  display: block;
-  padding: 1rem;
-}
-
-.mobile-menu .nav-item:hover {
-  background: #084d6e;
-}
-
-.mobile-menu-close {
-  display: none;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  cursor: pointer;
-} */
-
 /* Estilos para os links na barra de navegação */
 .navbar a {
   font-size: 18px;
@@ -130,10 +83,10 @@ body {
 /* Estilos para a seção de banner */
 .banner {
   color: white;
-  background-image: url("./imagens/fotoGrupo.jpeg");
+  background-image: url("./imagens/banner.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 695px; /* Altura ajustada */
+  height: 660px; /* Altura ajustada */
   display: flex;
   align-items: center;
 }
@@ -141,21 +94,21 @@ body {
 /* Estilos para o container dentro do banner */
 .banner .container {
   text-align: center;
-  max-width: 80%; /* Largura ajustada */
-  width: 41%;
-  padding: 30px 3em 30px 4.5em;
-  border-radius: 0 30px 30px 0;
-  border-top: 1px solid #FFF;
-  border-bottom: 1px solid #FFF;
-  border-right: 1px solid #FFF;
-
-  background-color: #87848461;
+    max-width: 80%;
+    /* width: 41%;
+    padding: 30px 3em 30px 4.5em;
+    border-radius: 0 30px 30px 0;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    background-color: #e1dfdf61; */
 }
 
 /* Estilos para os parágrafos dentro do banner */
 .banner h1{
   text-align: start;
   font-size: 50px;
+  color: #000;
 }
 .banner p {
   font-size: 20px;
@@ -194,15 +147,17 @@ body {
 
 /* Estilos para as caixas individuais na seção social */
 .box {
-  /* margin-bottom: 50px; */
+  height: 33vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 85%;
-  background-color: #084d6e;
-  border-radius: 20px;
+  /* background-color: #d3d3d3; */
+  background-color: #D3D3D3;
+  border-radius: 10px;
   padding: 30px 10px;
   margin: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.068);
 }
 
 .box-dicionario{
@@ -210,39 +165,27 @@ body {
   width: 80%;
   align-items: center;
   border-radius: 50px;
-  /* justify-content: center; */
-  color: #ffffff;
+  color: black;
+  padding: 15px 22px;
 }
 .box-dicionario img{
   width: 20%;
   border-radius: 100%;
-
+  margin: 0 10px;
 }
 .box-dicionario h1{
-  /* width: 60%; */
   font-size: 20px;
-  
-
-  /* background-color: aqua; */
 }
 
 .box1{
   display: flex;
-  flex-direction: column;
   align-items: end;
   width: 100%;
 }
 
-.box2{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 100%;            
-}
-
 /* Estilos para os parágrafos dentro das caixas sociais */
 .box p {
-  color: #fff;
+  color: black;
   font-size: 0.8rem;
   width: 80%;
   text-align: justify;
@@ -267,27 +210,26 @@ body {
   width: 100%;
   height: 100px;
   font-size: 50px;
-  background-color: #DCEDF6;
+  background-color: #d3d3d3;
 }
 
 .perguntas{
-  width: 90%;
+  width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-radius: 30px;
+  /* border-radius: 30px; */
   padding: 40px;    
-
-  background-color: #DCEDF6;
+  background-color: #d3d3d3;
 }
 
 section{
   width: 90%;
   max-width: 100%;
 
-  background-color: #DCEDF6;
+  background-color: #d3d3d3;
 }
 
 section details{
@@ -328,38 +270,109 @@ section details[open] summary ~ p{
 
 
 /* ---------------equipe-------------- */
-.container-equipe{
+.card-container{
+  padding: 15px 15px;
+  background-color: #fff;
+}
+
+.card-container h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  padding: 10px 0;
+}
+
+.container-equipe {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 29vh;
+  padding: 15px 15px;
 }
 
-.card{
+.container-equipe-2{
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 15px;
 }
 
-.card img{
-  width: 40%;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 22%;
+  background-color: #d3d3d3;
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 4px 8px rgb(0 0 0 / 59%);
+  text-align: center;
+}
+
+
+.circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.circle:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px; 
+  background-color: #c00; 
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 18px;
+  color: #000; 
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  color: #666; 
 }
 
 /* ----------localização------------ */
 .localizacao{
+  background-color: #fff;
 }
 
 .localizacao-end{
   display: flex;
   align-items: center;
+  padding: 10px 0;
 }
 
 .localizacao-img{
   display: flex;
   height: 74vh;
+}
+
+.imagem-loc{
+  display: flex;
+    justify-content: end;
+}
+
+.endereco h1{
+  font-size: 23px;
 }
 
 .localizacao-img1, .localizacao-img2{
@@ -391,7 +404,7 @@ section details[open] summary ~ p{
   display: flex;
   justify-content: center;
   padding: 10px 0;
-  font-size: 46px;
+  font-size: 50px;
 }
 
 .parcerias-imagens{
@@ -400,89 +413,138 @@ section details[open] summary ~ p{
 }
 
 .parcerias-imagens img{
-  width: 20%;
+  width: 18%;
 }
 
-/* Container sobre nos */
-.container-sobre-nos {
-  /* width: 100%; */
-  height: 710px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+/* ---------------projetos--------------- */
+.projetos {
+	width: 100%;
   background-color: #fff;
-
-  background-image: url("../assets/index/section4/background-img-section4.svg");
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  
 }
 
-.container-sobre-nos .sobre-texto{
-  background: rgba(8, 77, 110, 0.55);
-  display: flex;
-  flex-direction: column;
-  padding: 20px 30px;
-  position: relative;
-  right: 250px;
-  bottom: 120px;
-  backdrop-filter: blur(13.5px);
-  -webkit-backdrop-filter: blur(13.5px);
-  border-radius: 27px;
+.projetos h1{
+    justify-content: center;
+    font-size: 50px;
+    display: flex;
+    padding: 10px 0;
 }
 
-.container-sobre-nos .imagem{
-  width: 80%;
-  display: flex;
+.cards-textos{
+	display: flex;
+	justify-content: space-around;
 }
 
-.sobre-texto{
-  width: 30%;
-  color: #FFF;
-  background-color: transparent;
-  font: 200 italic 14px 'Poppins';
-  text-align: justify;
+.card-projetos {
+	width: 450px;
+  height: 458px;
+	background: #fff;
+	display: flex;
+	align-items: flex-end;
+	padding: 2rem 1rem;
+	position: relative;
+	transition: 0.5s all ease-in-out;
+}
+.card-projetos:hover {
+	transform: translateY(-10px);
+}
+.card-projetos::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* background: linear-gradient(to bottom, rgba(13, 36, 63, 0.3), rgba(13, 36, 63, 1));
+   */
+   background: #000000d2;
+	z-index: 2;
+	opacity: 0;
+	transition: 0.5s all;
+  border-radius: 10px;
+}
+.card-projetos:hover::before {
+	opacity: 1;
 }
 
-.sobre-nos-btn {
-  background-color: #FFF;
-    border: none;
-    padding: 5px 20px;
-    border-radius: 20px;
-    font: 600 15px 'Poppins';
-    margin-top: 20px;
-    cursor: pointer;
+.card-projetos img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+  border-radius: 10px;
+}
+.card-projetos .info {
+	position: relative;
+	color: #fff;
+	z-index: 3;
+	opacity: 0;
+	transform: translateY(30px);
+	transition: 0.5s all;
+}
+.card-projetos:hover .info {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.card-projetos .info h1 {
+	line-height: 32px;
+	margin-bottom: 10px;
+}
+.card-projetos .info p {
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+}
+.card-projetos .info .btn {
+	background: #fff;
+	padding: 0.5rem 1rem;
+	color: #000;
+	font-size: 12px;
+	cursor: pointer;
+	border-radius: 20px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: .4s ease-in-out;
+}
+.card-projetos .info .btn:hover {
+	background: #fc5185;
+	color: #fff;
+	box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilos para o rodapé (footer) */
 .container-footer {
-  background-color: #084d6e;
+  background-color: #d3d3d3;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  height: auto; /* Alterado para 'auto' para acomodar diferentes alturas de conteúdo */
+  height: auto; 
   padding: 10px;
-  color: #fff;
+  color: #000000;
 }
 
 .footer-logo,
 .footer-contato,
 .footer-endereco {
-  flex: 1; /* Alterado para flex: 1 para distribuir o espaço de forma igual entre os elementos */
+  flex: 1; 
   text-align: center;
   padding: 0 10px;
 }
 
-.footer-logo img {
-  width: 20%;
-  max-width: 100%;
-  margin: 0 auto; /* Adicionado para centralizar a logo na parte responsiva */
-  display: block; /* Adicionado para alinhar corretamente a logo */
-  margin-top: auto; /* Adicionado para a logo ficar na última linha */
+.footer-endereco p span{
+  font-weight: 500;
 }
+
+.footer-logo img {
+  width: 27%;
+  max-width: 100%;
+  margin: 0 auto; 
+  display: block; 
+  margin-top: auto; 
+}  
 
 /* Estilos para o container dentro do rodapé */
 .footer-container {
@@ -515,10 +577,17 @@ section details[open] summary ~ p{
   color: aqua;
 }
 
-/* Estilos para a seção inferior do rodapé */
-/* .footerBottom {
-  background-color: #084d6e;
-  padding: 20px;
-  text-align: center;
-  color: #000000;
-} */
+.imagem-footer{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.imagem-footer p{
+  padding: 0 5px;
+}
+
+.imagem-footer img{
+  width: 5%;
+}
