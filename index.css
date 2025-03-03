@@ -582,6 +582,7 @@ section details[open] summary ~ p{
     justify-content: center;
     align-items: center;
     padding: 5px;
+        
 }
 
 .imagem-footer p{
@@ -589,5 +590,5 @@ section details[open] summary ~ p{
 }
 
 .imagem-footer img{
-  width: 5%;
+  width: 15%;
 }
