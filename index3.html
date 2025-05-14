@@ -1,52 +1,135 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="pt-BR">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Santo Amaro - Tela de login</title>
-        <link rel="shortcut icon" href="assets/logo/logoBrancoNoBck.png" type="image/x-icon">
-        <link rel="stylesheet" href="./index.css">
-        <link rel="stylesheet" href="./css/responsividade/index-resp.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santo Amaro - Doação PIX</title>
+    <link rel="shortcut icon" href="assets/logo/logoBrancoNoBck.png" type="image/x-icon">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./css/responsividade/index-resp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
 
-    </head>
+<body>
 
-    <body>
-
-        <header class="header">
-            <nav class="navbar">
-                <div class="logo">
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
                 <img src="./imagens/logo-removebg-preview.png" width="30%" alt="">
-                </div>
+            </div>
 
-                <div class="nav-list">
-                    <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Voltar</li></a>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Voltar</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-        <div class="tela-login">
-            <h1>Login</h1><br>
-            
-            <input type="text" placeholder="Nome" id="caixa-nome">
-            <br><br>
-            <input type="password" placeholder="Senha" id="caixa-senha">
-            <br><br>
-            
-            <button>Enviar</button>
-            <br><br>
-            <h3 id="naotemcadastro">Ainda não possui cadastro?</h3>
-            <a href="index2.html" id="link-cadastro">Cadastrar</a>
-            
+    <div class="tela-login" id="pix-container">
+        <h1>Doação via PIX</h1><br>
+        
+        <div id="pix-qrcode"></div>
+        <br>
+        
+        <div class="pix-info">
+            <p>Chave PIX:</p>
+            <p class="pix-key">ameosantoamaro@gmail.com</p>
+            <p>Valor definido pelo doador</p>
         </div>
         
+        <br>
+        <button onclick="copiarPix()">Copiar Chave PIX</button>
+    </div>
 
-    </body>
-
-    </html>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            const pixData = {
+                key: "ameosantoamaro@gmail.com",
+                merchant: "Ame o Santo Amaro",
+                city: "SAO PAULO"
+            };
+            
+            
+            const payload = [
+                { id: "00", value: "01" }, 
+                { id: "26", value: [
+                    { id: "00", value: "br.gov.bcb.pix" }, 
+                    { id: "01", value: pixData.key } 
+                ]},
+                { id: "52", value: "0000" }, 
+                { id: "53", value: "986" },   
+                { id: "58", value: "BR" },    
+                { id: "59", value: pixData.merchant }, 
+                { id: "60", value: pixData.city }, 
+                { id: "62", value: [           
+                    { id: "05", value: "***" } 
+                ]}
+            ];
+            
+            
+            let payloadString = "";
+            payload.forEach(item => {
+                if (Array.isArray(item.value)) {
+                    let subString = "";
+                    item.value.forEach(subItem => {
+                        subString += subItem.id.padStart(2, '0') + 
+                                    subItem.value.length.toString().padStart(2, '0') + 
+                                    subItem.value;
+                    });
+                    payloadString += item.id + 
+                                    subString.length.toString().padStart(2, '0') + 
+                                    subString;
+                } else {
+                    payloadString += item.id + 
+                                    item.value.length.toString().padStart(2, '0') + 
+                                    item.value;
+                }
+            });
+            
+            
+            function calculateCRC16(data) {
+                const polynomial = 0x1021;
+                let crc = 0xFFFF;
+                
+                for (let i = 0; i < data.length; i++) {
+                    crc ^= data.charCodeAt(i) << 8;
+                    for (let j = 0; j < 8; j++) {
+                        crc = crc & 0x8000 ? (crc << 1) ^ polynomial : crc << 1;
+                    }
+                }
+                
+                return (crc & 0xFFFF).toString(16).toUpperCase().padStart(4, '0');
+            }
+            
+            
+            const pixPayload = payloadString + "6304";
+            const crc = calculateCRC16(pixPayload);
+            const completePayload = pixPayload + crc;
+            
+            
+            new QRCode(document.getElementById("pix-qrcode"), {
+                text: completePayload,
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            
+            
+            window.copiarPix = function() {
+                navigator.clipboard.writeText("ameosantoamaro@gmail.com")
+                    .then(() => alert("Chave PIX copiada!"))
+                    .catch(err => console.error("Falha ao copiar: ", err));
+            };
+        });
+    </script>
     <script src="../public/js/site-instucional/menu.js"></script>
+</body>
+</html>
