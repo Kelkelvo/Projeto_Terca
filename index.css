@@ -671,12 +671,13 @@ button:hover{
 
 .pix-key {
     font-weight: bold;
-    color: #d600079f;
+    color: #d60007d2;
     word-break: break-all;
     margin: 5px 0;
     padding: 8px;
     background: rgba(255,255,255,0.1);
     border-radius: 5px;
+    font-size: 20px;
 }
 
 body{
