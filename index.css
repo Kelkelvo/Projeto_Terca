@@ -515,6 +515,8 @@ section details[open] summary ~ p{
 }
 
 /* Estilos para o rodapé (footer) */
+
+
 .container-footer {
   background-color: #d3d3d3;
   align-items: center;
@@ -684,3 +686,387 @@ body{
   background-image: url("./imagens/doacao-para-ong.jpg");
   
 }
+
+/* Menu Mobile */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #084d6e;
+    margin-right: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        width: 50% !important;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #fbfdfd;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 1001;
+        border-left: 1px solid #d3d3d3;
+    }
+
+    .nav-list.active {
+        right: 0;
+    }
+
+    .nav-list ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-item {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        z-index: 1002;
+    }
+
+    /* Banner */
+    .banner {
+        height: 300px;
+        background-position: center;
+    }
+
+    /* Social */
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .box1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .box-dicionario {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .box-dicionario h1 {
+    font-size: 16px !important; 
+    white-space: normal; 
+  }
+
+  .box p {
+    font-size: 14px !important; 
+    line-height: 1.4; 
+    overflow-wrap: break-word; 
+  }
+
+    .box-dicionario img {
+        width: 30%;
+        margin-bottom: 10px;
+    }
+
+    /* Perguntas */
+    .container-perguntas .perguntas h1 {
+        font-size: 30px;
+        height: 70px;
+    }
+
+    /* Parcerias */
+     .parcerias {
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .parcerias h1 {
+        font-size: 30px;
+    }
+
+    .parcerias-imagens {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
+        justify-items: center;
+    }
+
+     .parcerias-imagens img {
+        width: 80% !important;
+        max-width: 180px;
+        margin: 0 !important;
+    }
+
+    /* Equipe */
+    .card-container {
+        padding: 15px;
+    }
+
+    .container-equipe, 
+    .container-equipe-2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+     .card {
+        width: 45%;
+        min-width: 160px;
+        margin: 0 !important;
+        padding: 15px;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Projetos */
+    .projetos h1 {
+        font-size: 20px;
+    }
+
+    .cards-textos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .card-projetos:nth-child(3) {
+    position: relative;
+    height: auto !important; /* Altura flexível */
+    min-height: 400px; /* Altura mínima garantida */
+  }
+
+  .card-projetos:nth-child(3) .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.7); /* Fundo semi-transparente */
+    border-radius: 0 0 10px 10px;
+  }
+
+  .card-projetos:nth-child(3) .info h1 {
+    font-size: 16px !important;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .card-projetos:nth-child(3) .info p {
+    font-size: 12px !important;
+    line-height: 1.4;
+    max-height: 120px;
+    overflow-y: auto; /* Scroll apenas se necessário */
+    padding-right: 5px; /* Espaço para o scroll */
+  }
+
+  /* Customização da scrollbar */
+  .card-projetos:nth-child(3) .info p::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .card-projetos:nth-child(3) .info p::-webkit-scrollbar-thumb {
+    background: #084d6e;
+  }
+    .card-projetos {
+        width: 100%;
+        max-width: 350px;
+        height: 380px;
+        margin: 0 !important;
+    }
+
+    .card-projetos .info h1 {
+    font-size: 18px !important;
+    line-height: 1.3;
+  }
+
+  .card-projetos .info p {
+    font-size: 14px !important;
+    margin-bottom: 8px;
+  }
+
+    /* Localização */
+   .container-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .footer-logo, 
+  .footer-contato, 
+  .footer-endereco {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-logo img {
+    width: 150px !important;
+  }
+  
+  .imagem-footer {
+    display: inline-flex;
+    margin: 0 10px;
+  }
+  
+  .imagem-footer img {
+    width: 35px !important;
+  }
+  
+  /* --- LOCALIZAÇÃO --- */
+  .localizacao-end {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .imagem-loc img {
+    width: 60px !important;
+    margin-right: 0 !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .endereco h1 {
+    font-size: 1rem !important;
+    padding: 0 10px !important;
+  }
+  
+  .localizacao-img {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .localizacao-img1, 
+  .localizacao-img2 {
+    width: 100%;
+  }
+  
+  .localizacao-img img {
+    width: 85% !important;
+  }
+  
+  /* --- LINHA DIVISORA --- */
+  .linha > div {
+    width: 90vw !important;
+  }
+
+    /* PIX */
+    .tela-login, #pix-container {
+        width: 90% !important;
+    }
+
+  }
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .box-dicionario h1 {
+    font-size: 14px !important;
+  }
+  
+  .box p {
+    font-size: 12px !important;
+  }
+  
+  .card-projetos .info h1 {
+    font-size: 16px !important;
+  }
+
+    .endereco h1 {
+    font-size: 1rem;
+  }
+  
+  .footer-endereco p {
+    font-size: 0.8rem;
+  }
+
+    .parcerias-imagens {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* EQUIPE - 2 colunas */
+    .card {
+        width: 45%;
+    }
+    
+    /* PROJETOS - 1 coluna */
+    .card-projetos {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* PARCERIAS - 4 colunas */
+    .parcerias-imagens {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* EQUIPE - 4 cards por linha */
+    .container-equipe {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+    
+    .card {
+        width: 100%;
+    }
+    
+    /* PROJETOS - 2 colunas */
+    .cards-textos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-projetos {
+        width: 100%;
+    }
+
+    .footer-logo img {
+    width: 25%;
+  }
+  
+  .imagem-footer img {
+    width: 12%;
+  }
+  
+  .localizacao-img img {
+    width: 60%;
+  }
+}
+

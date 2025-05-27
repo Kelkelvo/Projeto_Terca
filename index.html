@@ -25,7 +25,8 @@
 
                 <div class="nav-list">
                     <ul>
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</li></a>
+                    
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</li></a>
                     <li class="nav-item"><a href="#solucao" class="nav-link">Depoimentos</li></a>
                     <li class="nav-item"><a href="#solucao" class="nav-link">Sobre</li></a>
                     <li class="nav-item"><a href="#parcerias" class="nav-link">Parcerias</li></a>
@@ -392,6 +393,31 @@
 
         
         </div>
+
+        <script>
+    // Menu hamburguer
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.createElement('div');
+        menuIcon.className = 'menu-icon';
+        menuIcon.innerHTML = '☰';
+        document.querySelector('.navbar').appendChild(menuIcon);
+
+        const navList = document.querySelector('.nav-list');
+        
+        menuIcon.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            menuIcon.innerHTML = navList.classList.contains('active') ? '×' : '☰';
+        });
+
+                document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                menuIcon.innerHTML = '☰';
+            });
+        });
+    });
+</script>
 
     </body>
 
